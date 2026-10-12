@@ -1,5 +1,62 @@
 {
- "updated": "2026-10-12T10:51+00:00",
- "events": [],
- "leads": []
+ "updated": "2026-10-12T10:57+00:00",
+ "events": [
+  {
+   "n": "Welfair",
+   "s": "2026-10-14",
+   "e": "2026-10-16",
+   "k": "fiera",
+   "i": "me",
+   "u": "https://www.fieraroma.it/evento/welfair-2026/",
+   "src": "fieraroma.it"
+  },
+  {
+   "n": "Blue Planet Economy Expoforum",
+   "s": "2026-10-21",
+   "e": "2026-10-24",
+   "k": "fiera",
+   "i": "me",
+   "u": "https://www.fieraroma.it/evento/blue-planet-economy-expoforum/",
+   "src": "fieraroma.it"
+  },
+  {
+   "n": "NSE – New Space Economy European Expoforum",
+   "s": "2026-11-25",
+   "e": "2026-11-27",
+   "k": "fiera",
+   "i": "me",
+   "u": "https://www.fieraroma.it/evento/nse-new-space-economy-european-expoforum-2026/",
+   "src": "fieraroma.it"
+  },
+  {
+   "n": "Ro.Me Museum Exhibition",
+   "s": "2026-12-02",
+   "e": "2026-12-04",
+   "k": "fiera",
+   "i": "me",
+   "u": "https://www.fieraroma.it/evento/ro-me-museum-exhibition-2026/",
+   "src": "fieraroma.it"
+  },
+  {
+   "n": "EvooTrends",
+   "s": "2026-12-11",
+   "e": "2026-12-13",
+   "k": "fiera",
+   "i": "me",
+   "u": "https://www.fieraroma.it/evento/evootrends-2026/",
+   "src": "fieraroma.it"
+  }
+ ],
+ "leads": [
+  {
+   "t": "Concorso Ministero della Difesa Assistenti RIPAM 2026 da 1100 posti – Pubblicati in area riservata, gli esiti e i punteggi AMM",
+   "u": "https://www.concorsando.it/blog/concorso-ministero-della-difesa-assistenti-ripam-2026/",
+   "k": "concorso"
+  },
+  {
+   "t": "Professioni sanitarie alla Sapienza, migliaia di candidati alla Fiera di Roma per la prova di ammissione - ConfineLive",
+   "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOZUJDampPRldjdzFHSzhEU1AyUGFTaEJqYTZvTzloai1lQzlLRVFuSlVZU080TjhTb09IaUxZRi0xRkVQY0prVWd4eV9sXzBJWU1QRVVad3NmclIwZEFiV3RkdEg1YnBVQ1B0MGNZcjhRdFRZejMwNHBldHZsSVNxTFlCMW5XQnRpbGhvOXR2aUN0ZlJaOTA2WTVOWXhNcnZ6VGVhT242WndQNTJvUXVFNFBxQ3pQNm52RlRWRG50SDBCcXRQV1AzdXkwSQ?oc=5",
+   "k": "concorso"
+  }
+ ]
 }
