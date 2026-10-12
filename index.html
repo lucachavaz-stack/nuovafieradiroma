@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1d4ed8"><title>Fiera di Roma – Eventi & Traffico</title>
+<style>
+:root{--bg:#f6f7f9;--cd:#fff;--tx:#14181f;--mu:#5f6b7a;--bd:#e2e6ec;--ac:#1d4ed8}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1318;--cd:#181e26;--tx:#eef1f5;--mu:#98a3b3;--bd:#2a3340;--ac:#6b9bff}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.45 system-ui,sans-serif;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+main{max-width:640px;margin:0 auto;padding:16px}h1{font-size:22px;margin:4px 0}h2{font-size:14px;color:var(--mu);text-transform:uppercase;margin:20px 0 8px}
+.sub,.d,.n{color:var(--mu);font-size:13px}.bn{border-radius:14px;padding:14px;color:#fff;font-weight:600;margin:12px 0}.bn small{display:block;font-weight:400}
+.cd{background:var(--cd);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-bottom:10px}.r{display:flex;justify-content:space-between;gap:8px}
+.tg{font-size:11px;font-weight:700;border:1px solid;border-radius:99px;padding:2px 8px;white-space:nowrap;height:fit-content}
+.hi{color:#dc2626}.me{color:#d97706}.lo{color:#16a34a}a{color:var(--ac)}.st{color:var(--ac);font-weight:600;font-size:13px;margin-top:6px}
+</style></head><body><main>
+<h1>🚗 Nuova Fiera di Roma</h1><p class="sub" id="up">Caricamento…</p><div id="bn"></div>
+<h2>Eventi confermati</h2><div id="ev"></div>
+<h2>Segnalazioni da verificare (concorsi, prove, università)</h2><div id="ld"></div>
+<p class="n">Fonti: fieraroma.it (calendario ufficiale) e notizie web. Le segnalazioni sono rilevate in automatico: controlla sempre l'avviso ufficiale. Anticipi di partenza = stime, non traffico live.</p>
+</main><script>
+var M={hi:"+30–40 min",me:"+15–25 min",lo:"+10 min"},L={hi:"IMPATTO ALTO",me:"IMPATTO MEDIO",lo:"IMPATTO BASSO"},C={hi:"#dc2626",me:"#d97706",lo:"#16a34a"};
+function E(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function D(s){var p=s.split("-");return new Date(+p[0],+p[1]-1,+p[2])}
+function F(d){return d.toLocaleDateString("it-IT",{day:"numeric",month:"short"})}
+var T=new Date();T=new Date(T.getFullYear(),T.getMonth(),T.getDate());
+function when(x){var s=D(x.s),e=D(x.e||x.s),d=Math.round((s-T)/864e5);return{s:s,e:e,d:d,on:T>=s&&T<=e}}
+fetch("data.json?"+Date.now()).then(function(r){return r.json()}).then(function(j){
+ document.getElementById("up").textContent="Aggiornato il "+new Date(j.updated).toLocaleString("it-IT",{dateStyle:"short",timeStyle:"short"});
+ var ev=j.events.map(function(x){x.w=when(x);return x}).filter(function(x){return x.w.e>=T}).sort(function(a,b){return a.w.s-b.w.s});
+ var ld=(j.leads||[]).filter(function(x){return !x.s||when(x).e>=T}).sort(function(a,b){return (a.s||"9").localeCompare(b.s||"9")});
+ var u=ev.concat(ld.filter(function(x){return x.s}).map(function(x){return{n:x.t,i:"hi",w:when(x)}})).filter(function(x){return x.w.on||x.w.d===1})[0];
+ document.getElementById("bn").innerHTML=u?'<div class="bn" style="background:'+C[u.i]+'">'+(u.w.on?"Oggi":"Domani")+": "+E(u.n)+"<small>Parti prima: "+M[u.i]+" se passi da Via Portuense / Magliana.</small></div>":'<div class="bn" style="background:#475569">Nessun evento oggi o domani<small>Traffico normale legato alla Fiera.</small></div>';
+ document.getElementById("ev").innerHTML=ev.map(function(x){var w=x.w;return'<div class="cd"><div class="r"><div><b>'+(x.k==="concorso"?"📝 ":"🎪 ")+E(x.n)+'</b><div class="d">'+F(w.s)+(x.e&&x.e!==x.s?" – "+F(w.e):"")+(x.h?" · ore "+E(x.h):"")+'</div></div><span class="tg '+x.i+'">'+L[x.i]+'</span></div><div class="st">'+(w.on?"🔴 In corso ora":w.d===1?"Domani":"Tra "+w.d+" giorni")+' · anticipa di '+M[x.i]+'</div></div>'}).join("")||'<div class="cd">Nessun evento in programma.</div>';
+ document.getElementById("ld").innerHTML=ld.map(function(x){return'<div class="cd"><b>'+(x.k==="concorso"?"📝 ":"🎪 ")+E(x.t)+'</b><div class="d">'+(x.s?F(D(x.s))+(x.e!==x.s?" – "+F(D(x.e)):"")+" (data rilevata automaticamente)":"data non rilevata")+'</div><div class="st"><a href="'+E(x.u)+'" target="_blank" rel="noopener">Apri la notizia ↗</a></div></div>'}).join("")||'<div class="cd">Nessuna segnalazione recente.</div>';
+}).catch(function(){document.getElementById("up").textContent="Dati non disponibili: esegui prima l'azione 'Aggiorna eventi'."});
+</script></body></html>
