@@ -82,10 +82,14 @@ def leads():
             if "fiera di roma" not in low and "fiera roma" not in low:
                 continue
             seen.add(link)
-            ds = []
+            alld = []
             for m in re.finditer(r"fiera (?:di )?roma", low):
-                ds += dates_in(full[max(0, m.start() - 400): m.end() + 400])
-            ds = sorted({d for d in ds if d[1] >= TODAY})
+                alld += dates_in(full[max(0, m.start() - 400): m.end() + 400])
+            ds = sorted({d for d in alld if d[1] >= TODAY})
+            if alld and not ds:
+                continue
+            if re.search(r"esiti|graduatoria|punteggi|risultati|ammessi", title.lower()):
+                continue
             lead = {"t": html.unescape(title), "u": link, "k": "concorso" if re.search(r"concors|selezion|test|prov", low) else "evento"}
             if ds:
                 lead["s"], lead["e"] = ds[0][0].isoformat(), max(d[1] for d in ds).isoformat()
