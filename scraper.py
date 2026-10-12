@@ -24,15 +24,25 @@ def get(url, timeout=25):
 
 def fiere():
     out, seen = [], set()
-    for u in ("https://www.fieraroma.it/en/eventi/", "https://www.fieraroma.it/eventi/photo/", "https://www.fieraroma.it/luogo/fiera-di-roma/"):
-        t = get(u)
-        for n, s, e in re.findall(r'"name":"([^"]+)","startDate":"(\d{4}-\d{2}-\d{2})[^"]*","endDate":"(\d{4}-\d{2}-\d{2})', t):
-            n = html.unescape(n).replace("\\/", "/")
-            if (n, s) in seen or dt.date.fromisoformat(e) < TODAY:
-                continue
-            seen.add((n, s))
-            out.append({"n": n, "s": s, "e": e, "k": "fiera", "i": "hi" if n.lower().startswith(HIGH) else "me",
-                        "u": "https://www.fieraroma.it/en/eventi/", "src": "fieraroma.it"})
+    def add(n, s, e, u):
+        n = html.unescape(n).replace("\\/", "/").strip()
+        if not n or (n, s) in seen or dt.date.fromisoformat(e) < TODAY:
+            return
+        seen.add((n, s))
+        out.append({"n": n, "s": s, "e": e, "k": "fiera", "i": "hi" if n.lower().startswith(HIGH) else "me", "u": u, "src": "fieraroma.it"})
+    api = "https://www.fieraroma.it/wp-json/tribe/events/v1/events?per_page=50&start_date=" + TODAY.isoformat()
+    try:
+        for ev in json.loads(get(api) or "{}").get("events", []):
+            add(ev["title"], ev["start_date"][:10], ev["end_date"][:10], ev.get("url", "https://www.fieraroma.it/en/eventi/"))
+    except Exception as e:
+        print("API ERR", e)
+    if not out:
+        for u in ("https://www.fieraroma.it/en/eventi/", "https://www.fieraroma.it/eventi/photo/"):
+            t = get(u)
+            print("pagina", u, len(t), "caratteri")
+            rx = r'"name":"([^"]+)"[^{}]*?"startDate":"(\d{4}-\d{2}-\d{2})[^"]*"[^{}]*?"endDate":"(\d{4}-\d{2}-\d{2})'
+            for n, s_, e in re.findall(rx, t):
+                add(n, s_, e, u)
     return out
 
 def dates_in(text):
@@ -46,30 +56,37 @@ def dates_in(text):
             pass
     return res
 
+FEEDS = ["https://www.concorsando.it/blog/feed/", "https://simoneconcorsi.it/feed/", "https://www.ticonsiglio.com/feed/",
+         "https://corriereuniv.it/feed/", "https://www.newsistruzione.it/feed/", "https://www.leggioggi.it/feed/",
+         "https://lentepubblica.it/feed/", "https://www.concorsipubblici.com/feed/"]
+CE = "{http://purl.org/rss/1.0/modules/content/}encoded"
+
 def leads():
     out, seen = [], set()
+    urls = list(FEEDS)
     for q in QUERIES:
-        url = "https://news.google.com/rss/search?" + urllib.parse.urlencode({"q": q + " when:30d", "hl": "it", "gl": "IT", "ceid": "IT:it"})
+        urls.append("https://news.google.com/rss/search?" + urllib.parse.urlencode({"q": q + " when:30d", "hl": "it", "gl": "IT", "ceid": "IT:it"}))
+    for url in urls:
         try:
             items = ET.fromstring(get(url)).findall(".//item")
         except ET.ParseError:
-            continue
-        for it in items[:12]:
+            items = []
+        print(len(items), "articoli da", url[:60])
+        for it in items[:25]:
             title, link = it.findtext("title", ""), it.findtext("link", "")
-            desc = re.sub(r"<[^>]+>", " ", html.unescape(it.findtext("description", "")))
             if link in seen:
                 continue
-            seen.add(link)
-            body = re.sub(r"<[^>]+>", " ", get(link, 15)) if link else ""
-            full = html.unescape(" ".join([title, desc, body]))
+            raw = " ".join([title, it.findtext("description", ""), it.findtext(CE, "")])
+            full = html.unescape(re.sub(r"<[^>]+>", " ", raw))
             low = full.lower()
             if "fiera di roma" not in low and "fiera roma" not in low:
                 continue
+            seen.add(link)
             ds = []
             for m in re.finditer(r"fiera (?:di )?roma", low):
                 ds += dates_in(full[max(0, m.start() - 400): m.end() + 400])
             ds = sorted({d for d in ds if d[1] >= TODAY})
-            lead = {"t": title, "u": link, "k": "concorso" if re.search(r"concors|selezion|test|prov", low) else "evento"}
+            lead = {"t": html.unescape(title), "u": link, "k": "concorso" if re.search(r"concors|selezion|test|prov", low) else "evento"}
             if ds:
                 lead["s"], lead["e"] = ds[0][0].isoformat(), max(d[1] for d in ds).isoformat()
             out.append(lead)
