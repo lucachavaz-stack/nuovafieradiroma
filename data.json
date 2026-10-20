@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20T03:08+00:00",
+ "updated": "2026-10-20T10:51+00:00",
  "events": [
   {
    "n": "Blue Planet Economy Expoforum",
@@ -8,6 +8,24 @@
    "k": "fiera",
    "i": "me",
    "u": "https://www.fieraroma.it/evento/blue-planet-economy-expoforum/",
+   "src": "fieraroma.it"
+  },
+  {
+   "n": "SIGMA WORLD",
+   "s": "2026-11-02",
+   "e": "2026-11-05",
+   "k": "fiera",
+   "i": "me",
+   "u": "https://www.fieraroma.it/evento/sigma-world/",
+   "src": "fieraroma.it"
+  },
+  {
+   "n": "SuperCat Show 2026",
+   "s": "2026-11-14",
+   "e": "2026-11-15",
+   "k": "fiera",
+   "i": "me",
+   "u": "https://www.fieraroma.it/evento/supercat-show-2026/",
    "src": "fieraroma.it"
   },
   {
