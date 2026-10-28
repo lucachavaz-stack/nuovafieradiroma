@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28T11:59+00:00",
+ "updated": "2026-10-28T18:18+00:00",
  "events": [
   {
    "n": "SIGMA WORLD",
@@ -47,5 +47,13 @@
    "src": "fieraroma.it"
   }
  ],
- "leads": []
+ "leads": [
+  {
+   "t": "Concorso Unico RIPAM Laureati 2026 da 1340 posti – Graduatorie finali per ASS (01-05) e CHI – asincrone per AMM ed ECO",
+   "u": "https://www.concorsando.it/blog/concorso-unico-ripam-laureati-2026/",
+   "k": "concorso",
+   "s": "2026-11-09",
+   "e": "2026-11-26"
+  }
+ ]
 }
