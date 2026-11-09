@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T00:27+00:00",
+ "updated": "2026-11-09T10:49+00:00",
  "events": [
   {
    "n": "SuperCat Show 2026",
@@ -40,8 +40,25 @@
  ],
  "leads": [
   {
+   "t": "Concorso Progressioni Ministero Giustizia Assistenti a Funzionari da 1500 posti – Ecco le date della prova scritta",
+   "u": "https://www.concorsando.it/blog/progressioni-ministero-giustizia-da-assistenti-a-funzionari-2026/",
+   "k": "concorso"
+  },
+  {
    "t": "Concorso Ministero della Cultura Funzionari laureati 2026 da 577 posti nel MIC – Ecco le date per 01,03 e 04",
    "u": "https://www.concorsando.it/blog/concorso-ministero-della-cultura-funzionari-laureati-2026/",
+   "k": "concorso",
+   "s": "2026-11-23",
+   "e": "2026-11-23"
+  },
+  {
+   "t": "Pubblicato il calendario della prova scritta per il concorso interno al Ministero della Giustizia da 1500 posti",
+   "u": "https://simoneconcorsi.it/calendario-prove-funzionari-ministero-giustizia/",
+   "k": "concorso"
+  },
+  {
+   "t": "Pubblicato il diario della prova scritta del concorso da 577 funzionari al Ministero della Cultura",
+   "u": "https://simoneconcorsi.it/calendario-concorso-funzionari-ministero-cultura/",
    "k": "concorso",
    "s": "2026-11-23",
    "e": "2026-11-23"
