@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T05:30+00:00",
+ "updated": "2026-11-12T14:31+00:00",
  "events": [
   {
    "n": "SuperCat Show 2026",
@@ -8,6 +8,15 @@
    "k": "fiera",
    "i": "me",
    "u": "https://www.fieraroma.it/evento/supercat-show-2026/",
+   "src": "fieraroma.it"
+  },
+  {
+   "n": "MOACASA",
+   "s": "2026-11-21",
+   "e": "2026-11-29",
+   "k": "fiera",
+   "i": "me",
+   "u": "https://www.fieraroma.it/evento/moacasa-26/",
    "src": "fieraroma.it"
   },
   {
@@ -52,9 +61,11 @@
    "k": "concorso"
   },
   {
-   "t": "Date dei Concorsi RIPAM: MIC 1.800 va in aula dal 13 al 20 novembre, mentre il MIC Funzionari 577 ha fissato le prime prove scritte al 23 novembre",
-   "u": "https://www.concorsando.it/blog/date-dei-concorsi-ripam-2026/",
-   "k": "concorso"
+   "t": "Il MEF ha pubblicato i calendari delle prove per i diversi profili del concorso da 548 posti per funzionari",
+   "u": "https://simoneconcorsi.it/calendario-prove-concorso-funzionari-mef/",
+   "k": "concorso",
+   "s": "2026-12-02",
+   "e": "2026-12-03"
   },
   {
    "t": "Pubblicato il calendario della prova scritta per il concorso interno al Ministero della Giustizia da 1500 posti",
