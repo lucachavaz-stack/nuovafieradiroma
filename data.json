@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T14:31+00:00",
+ "updated": "2026-11-12T21:42+00:00",
  "events": [
   {
    "n": "SuperCat Show 2026",
@@ -45,6 +45,15 @@
    "i": "me",
    "u": "https://www.fieraroma.it/evento/evootrends-2026/",
    "src": "fieraroma.it"
+  },
+  {
+   "n": "Roma International Estetica 2027",
+   "s": "2027-02-06",
+   "e": "2027-02-08",
+   "k": "fiera",
+   "i": "me",
+   "u": "https://www.fieraroma.it/evento/roma-international-estetica-2027/",
+   "src": "fieraroma.it"
   }
  ],
  "leads": [
@@ -78,6 +87,13 @@
    "k": "concorso",
    "s": "2026-11-23",
    "e": "2026-11-23"
+  },
+  {
+   "t": "Salone dello Studente e del Prof di Roma: il programma del MIM",
+   "u": "https://www.newsistruzione.it/2026/11/12/salone-studente-prof-roma-programma-mim",
+   "k": "evento",
+   "s": "2026-11-17",
+   "e": "2026-11-19"
   }
  ]
 }
