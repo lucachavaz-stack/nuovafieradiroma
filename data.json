@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T04:47+00:00",
+ "updated": "2026-11-13T13:50+00:00",
  "events": [
   {
    "n": "SuperCat Show 2026",
@@ -8,6 +8,15 @@
    "k": "fiera",
    "i": "me",
    "u": "https://www.fieraroma.it/evento/supercat-show-2026/",
+   "src": "fieraroma.it"
+  },
+  {
+   "n": "SALONE DELLO STUDENTE E DEL PROF – ROMA",
+   "s": "2026-11-17",
+   "e": "2026-11-19",
+   "k": "fiera",
+   "i": "me",
+   "u": "https://www.fieraroma.it/evento/salone-dello-studente-e-del-prof-roma/",
    "src": "fieraroma.it"
   },
   {
@@ -58,16 +67,18 @@
  ],
  "leads": [
   {
+   "t": "Concorso Ministero della Cultura Funzionari laureati 2026 da 577 posti nel MIC – Ecco le date per 01,03 e 04 (Modifica degli orari)",
+   "u": "https://www.concorsando.it/blog/concorso-ministero-della-cultura-funzionari-laureati-2026/",
+   "k": "concorso",
+   "s": "2026-11-23",
+   "e": "2026-11-23"
+  },
+  {
    "t": "Concorso Ministero Economia Finanze 2026 da 548 posti nel MEF – Pubblicati gli avvisi di Convocazione per Funzionari",
    "u": "https://www.concorsando.it/blog/concorso-ministero-economia-e-finanze-laureati-2026/",
    "k": "concorso",
    "s": "2026-12-01",
    "e": "2026-12-03"
-  },
-  {
-   "t": "Concorso Progressioni Ministero Giustizia Assistenti a Funzionari da 1500 posti – Data e Banca dati ufficiale della prova scritta",
-   "u": "https://www.concorsando.it/blog/progressioni-ministero-giustizia-da-assistenti-a-funzionari-2026/",
-   "k": "concorso"
   },
   {
    "t": "Il MEF ha pubblicato i calendari delle prove per i diversi profili del concorso da 548 posti per funzionari",
@@ -87,13 +98,6 @@
    "k": "concorso",
    "s": "2026-11-23",
    "e": "2026-11-23"
-  },
-  {
-   "t": "Salone dello Studente e del Prof di Roma: il programma del MIM",
-   "u": "https://www.newsistruzione.it/2026/11/12/salone-studente-prof-roma-programma-mim",
-   "k": "evento",
-   "s": "2026-11-17",
-   "e": "2026-11-19"
   }
  ]
 }
