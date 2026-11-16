@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T00:39+00:00",
+ "updated": "2026-11-16T10:34+00:00",
  "events": [
   {
    "n": "SALONE DELLO STUDENTE E DEL PROF – ROMA",
@@ -8,6 +8,15 @@
    "k": "fiera",
    "i": "me",
    "u": "https://www.fieraroma.it/evento/salone-dello-studente-e-del-prof-roma/",
+   "src": "fieraroma.it"
+  },
+  {
+   "n": "ASSEMBLEA NAZIONALE CNA 2026",
+   "s": "2026-11-20",
+   "e": "2026-11-20",
+   "k": "fiera",
+   "i": "me",
+   "u": "https://www.fieraroma.it/evento/assemblea-nazionale-cna-2026/",
    "src": "fieraroma.it"
   },
   {
@@ -75,13 +84,6 @@
    "t": "Pubblicato il calendario della prova scritta per il concorso interno al Ministero della Giustizia da 1500 posti",
    "u": "https://simoneconcorsi.it/calendario-prove-funzionari-ministero-giustizia/",
    "k": "concorso"
-  },
-  {
-   "t": "Pubblicato il diario della prova scritta del concorso da 577 funzionari al Ministero della Cultura",
-   "u": "https://simoneconcorsi.it/calendario-concorso-funzionari-ministero-cultura/",
-   "k": "concorso",
-   "s": "2026-11-23",
-   "e": "2026-11-23"
   }
  ]
 }
